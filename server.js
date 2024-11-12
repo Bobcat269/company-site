@@ -8,7 +8,7 @@ const Company = {
         {name: 'Facebook', url: 'https://www.facebook.com'},
         {name: 'Twitter', url: 'https://www.twitter.com'},
         {name: 'CuteDog', url:'https://www.thesprucepets.com/thmb/ddtN8SR9bIWajg3IVhXwbOgZuz8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/1_BlackPuppy-5ba50070c9e77c0082221c54.jpg'}
-        ]
+      ]
     }
 
 
@@ -25,7 +25,11 @@ app.get('/history', (req, res) => {
 });
 
 app.get('/links', (req, res) => {
-    res.render('links.ejs')
+    // console.log(Company.externalLinks);
+
+    res.render('links.ejs', {
+        links: Company.externalLinks
+    })
 });
 
 
