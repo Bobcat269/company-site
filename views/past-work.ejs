@@ -7,5 +7,21 @@
 </head>
 <body>
     <%- include("partials/nav") %>
+    <%works.forEach((work) => {%>
+        <h1><%= work.name%></h1>
+        <p><%= work.description%></p>
+    <%})%>
+
+    <ul>
+        <% works.forEach((work, index)  => { %>
+            <!-- Wrap each li in an a tag -->
+            <a href= "/past-work/<%=index%>">
+                <li><%= work.name %></li>
+
+            </a>
+         
+        <% }); %>
+       
+    </ul>
 </body>
 </html>
