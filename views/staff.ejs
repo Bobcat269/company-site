@@ -7,5 +7,13 @@
 </head>
 <body>
     <%- include("partials/nav") %>
+    <ul>
+        <% staff.forEach((person,index) => { %>
+            <a href="/staff/<%= index %>">
+                <li><%= person.name %></li> </a>
+        <% }) %>
+
+
+    </ul>
 </body>
 </html>

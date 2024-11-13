@@ -14,8 +14,15 @@ const Company = {
         {name:'Thing 1', date: "1/1/1900", description: "Blah Blah Blah, this doesn't really matter. This project is awesome, hire me." },
         {name:'Thing 2', date: "1/2/1910", description: "Blah Blah Blah, this doesn't really matter. This project is awesome, hire me." },
         {name:'Thing 4', date: "1/4/1930", description: "Blah Blah Blah, this doesn't really matter. This project is awesome, hire me." }
+    ],
+    staff: [
+        {name: 'John', title: 'CEO', description: 'John is a great guy, he is the best CEO in the world', email: 'test@gmail.com', phone: '123-456-7890'},
+        {name: 'Jane', title: 'CTO', description: 'Jane is a great gal, she is the best CTO in the world', email: 'test@gmail.com', phone: '123-456-7890'},
+        {name: 'Jim', title: 'CFO', description: 'Jim is a great guy, he is the best CFO in the world', email: 'test@gmail.com', phone: '123-456-7890'},
+        {name: 'Jill', title: 'COO', description: 'Jill is a great gal, she is the best COO in the world', email: 'test@gmail.com', phone: '123-456-7890'}
     ]
     }
+
 
 
 
@@ -41,10 +48,10 @@ app.get('/links', (req, res) => {
 
 
 app.get('/past-work', (req, res) => {
-    
+
     res.render('past-work.ejs', {
         works: Company.pastWork
-        
+
     })
 });
 
@@ -55,14 +62,21 @@ app.get('/past-work/:id', (req, res) => {
     res.render('work.ejs', {
         item: Company.pastWork[index]
     })
-    
-    
+
+
 });
 
 app.get('/staff', (req, res) => {
-    res.render('staff.ejs')
+res.render('staff.ejs',{
+    staff: Company.staff
+})
 });
 
+app.get('/staff/:id', (req, res) => {
+    res.render('person.ejs' ,{
+    person: Company.staff[req.params.id]
+    })
+});
 
 
 app.listen(PORT, () => {
