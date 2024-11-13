@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .hero {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: #14b057; /* Logo color */
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: #333;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            color: #000;
+        }
+    </style>
 </head>
 <body>
     <%- include("partials/nav") %>
+
+    <div class="hero">
+        <img src="/static/assets/images/logo.png" alt="Responsive Logo" class="img-fluid">
+        <h1>Welcome to the Home Page</h1>
+        <p class="tagline">of the</p>
+        <p class="description">Chriszakijen Company. We're glad you're here!</p>
+    </div>
 </body>
 </html>

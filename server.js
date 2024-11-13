@@ -1,7 +1,20 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const PORT = 3000;
 
+app.use(express.static("public"));
+
+// Serve static files from the "public" folder
+app.use('/static', express.static(path.join(__dirname, 'public')));
+
+// Define routes
+app.get('/', (req, res) => {
+    res.render('home', { title: 'Home' });
+});
+
+
+app.set('view engine', 'ejs');
 const Company = {
     externalLinks: [
         {name: 'Google', url: 'https://www.google.com'},
@@ -10,20 +23,18 @@ const Company = {
         {name: 'CuteDog', url:'https://www.thesprucepets.com/thmb/ddtN8SR9bIWajg3IVhXwbOgZuz8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/1_BlackPuppy-5ba50070c9e77c0082221c54.jpg'}
       ],
     pastWork: [
-        {name:'Thing 3', date: "1/3/1920", description: "Blah Blah Blah, this doesn't really matter. This project is awesome, hire me." },
-        {name:'Thing 1', date: "1/1/1900", description: "Blah Blah Blah, this doesn't really matter. This project is awesome, hire me." },
-        {name:'Thing 2', date: "1/2/1910", description: "Blah Blah Blah, this doesn't really matter. This project is awesome, hire me." },
-        {name:'Thing 4', date: "1/4/1930", description: "Blah Blah Blah, this doesn't really matter. This project is awesome, hire me." }
+        {name:'The First Project', date: "1/3/1920", description: "Our first Project working together.  This were rough.  Especially Jen.  but this doesn't really matter. This project is awesome, hire me." },
+        {name:'The Second Project', date: "1/1/1900", description: "Our second Project working together.  This was better.  Jen started to pick up the slack a little.   this doesn't really matter. This project is awesome, hire me." },
+        {name:'Even Better Projct ', date: "1/2/1910", description: "Our third projct working together.  Way Better!  Jen Got Fired., this doesn't really matter. This project is awesome, hire me." },
+        {name:'This Current and BEST Project', date: "1/4/1930", description: "Our BEST project working together.  Jen WHO>>???? , this doesn't really matter. This project is awesome, hire me." }
     ],
     staff: [
-        {name: 'John', title: 'CEO', description: 'John is a great guy, he is the best CEO in the world', email: 'test@gmail.com', phone: '123-456-7890'},
-        {name: 'Jane', title: 'CTO', description: 'Jane is a great gal, she is the best CTO in the world', email: 'test@gmail.com', phone: '123-456-7890'},
-        {name: 'Jim', title: 'CFO', description: 'Jim is a great guy, he is the best CFO in the world', email: 'test@gmail.com', phone: '123-456-7890'},
-        {name: 'Jill', title: 'COO', description: 'Jill is a great gal, she is the best COO in the world', email: 'test@gmail.com', phone: '123-456-7890'}
+        {name: 'Chris', title: 'CEO', description: 'John is a great guy, he is the best CEO in the world', email: 'test@gmail.com', phone: '123-456-7890'},
+        {name: 'Zaki', title: 'CTO', description: 'Jane is a great gal, she is the best CTO in the world', email: 'test@gmail.com', phone: '123-456-7890'},
+        {name: 'Jen', title: 'CFO', description: 'Jim is a great guy, he is the best CFO in the world', email: 'test@gmail.com', phone: '123-456-7890'},
+        {name: 'Jens-Replacement', title: 'COO', description: 'Jill is a great gal, she is the best COO in the world', email: 'test@gmail.com', phone: '123-456-7890'}
     ]
     }
-
-
 
 
 app.get('/', (req, res) => {

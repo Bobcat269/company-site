@@ -4,9 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= item.name %></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .work-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .work-container h1 {
+            font-size: 2rem;
+            color: #14b057; /* Logo color */
+            margin-bottom: 10px;
+        }
+
+        .work-container h2 {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .work-container p {
+            font-size: 1rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: #00050a; /* Logo color scheme */
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h2><%= item.date %></h2>
-    <p><%= item.description %></p>
+    <%- include("partials/nav") %>
+
+    <div class="work-container">
+        <!-- Work Item Name -->
+        <h1><%= item.name %></h1>
+
+        <!-- Work Item Date -->
+        <h2><%= item.date %></h2>
+
+        <!-- Work Item Description -->
+        <p><%= item.description %></p>
+
+        <!-- Back to Past Work Link -->
+        <a href="/past-work" class="back-link">Back to Past Work</a>
+    </div>
 </body>
 </html>

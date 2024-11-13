@@ -1,27 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>past-work</title>
+    <title>Past Work</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .work-item {
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .work-item h1 {
+            font-size: 1.5rem;
+            margin: 0 0 10px;
+            color: #14b057;
+        }
+
+        .work-item p {
+            margin: 0 0 10px;
+            color: #555;
+        }
+
+        .work-item ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .work-item ul li {
+            margin: 5px 0;
+            padding: 10px;
+            background: #00050a;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .work-item ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        .work-item ul li:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <%- include("partials/nav") %>
-    <%works.forEach((work) => {%>
-        <h1><%= work.name%></h1>
-        <p><%= work.description%></p>
-    <%})%>
 
-    <ul>
-        <% works.forEach((work, index)  => { %>
-            <!-- Wrap each li in an a tag -->
-            <a href= "/past-work/<%=index%>">
-                <li><%= work.name %></li>
+    <% works.forEach((work, index) => { %>
+        <div class="work-item">
+            <!-- Header for each work -->
+            <h1><%= work.name %></h1>
 
-            </a>
-         
-        <% }); %>
-       
-    </ul>
+            <!-- Description of the work -->
+            <p><%= work.description %></p>
+
+            <!-- Links under their respective headers -->
+            <ul>
+                <li>
+                    <a href="/past-work/<%= index %>"><%= work.name %></a>
+                </li>
+            </ul>
+        </div>
+    <% }) %>
 </body>
 </html>

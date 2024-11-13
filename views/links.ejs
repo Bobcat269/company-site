@@ -3,15 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>links</title>
+    <title>Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #14b057; /* Logo color */
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .links-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #00050a; /* Logo color scheme */
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .link-item a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        .link-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <%- include("partials/nav") %>
-    <h1><% for( let index = 0; index < links.length; index++ ) { %>
-        <!-- <%= links[index].name %> -->
-        <!-- <%= links[index].url %></br> -->
-        <a href=<%= links[index].url %>><%= links[index].name %></a><br>
+
+    <h1>Links</h1>
+
+    <div class="links-container">
+        <% for(let index = 0; index < links.length; index++) { %>
+            <div class="link-item">
+                <a href="<%= links[index].url %>" target="_blank" rel="noopener noreferrer">
+                    <%= links[index].name %>
+                </a>
+            </div>
         <% } %>
-          </h1>
+    </div>
 </body>
 </html>

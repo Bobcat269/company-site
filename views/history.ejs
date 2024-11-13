@@ -3,11 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>history</title>
+    <title>Our History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #14b057; /* Logo color */
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-style: italic;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        h3, .section-header {
+            color: #000;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
     <%- include("partials/nav") %>
-    <h2>Our History</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure illo voluptatem asperiores ut esse odio modi expedita qui neque facilis dolorem itaque in nihil, a iusto quis consequatur sed nesciunt.    </p>
-    </body>
+
+    <div class="content-container">
+        <!-- Header -->
+        <h2>Our History</h2>
+        <h4>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</h4>
+
+        <!-- Sections -->
+        <h3 class="section-header">Founded: 2024</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at pharetra justo. Suspendisse ut nulla quis lorem luctus tincidunt non nec enim.</p>
+
+        <h3 class="section-header">Key Milestones</h3>
+        <p>Donec sed lacus vel magna consectetur viverra. Maecenas dictum eu ipsum nec malesuada.</p>
+
+        <h3 class="section-header">Achievements and Contributions</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a finibus elit, a ultrices ipsum.</p>
+
+        <h3 class="section-header">Challenges & Resilience</h3>
+        <p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure..."</p>
+
+        <h3 class="section-header">Our Mission</h3>
+        <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores."</p>
+
+        <h3 class="section-header">Our Philosophy</h3>
+        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        help@lipsum.com - Privacy Policy · Do Not Sell or Share My Personal Information
+    </footer>
+</body>
 </html>
